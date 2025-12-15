@@ -1,0 +1,63 @@
+{% extends "base.html" %} {% block title %}My Tasks - To-Do App{% endblock %} {%
+block content %}
+<section class="add-task">
+  <h2>Add New Task</h2>
+  <form action="{{ url_for('add_task') }}" method="post" class="add-form">
+    <input
+      type="text"
+      name="title"
+      placeholder="Enter task title..."
+      required
+      autofocus
+      class="task-input"
+    />
+    <button type="submit" class="btn btn-primary">Add Task</button>
+  </form>
+</section>
+
+<section class="task-list">
+  <h2>Tasks ({{ tasks | length }})</h2>
+
+  {% if tasks %}
+  <ul class="tasks">
+    {% for task in tasks %}
+    <li class="task-item {% if task.done %}task-done{% endif %}">
+      <form
+        action="{{ url_for('update_task', task_id=task.id) }}"
+        method="post"
+        class="status-form"
+      >
+        <label class="checkbox-label">
+          <input
+            type="checkbox"
+            name="done"
+            {%
+            if
+            task.done
+            %}checked{%
+            endif
+            %}
+            onchange="this.form.submit()"
+            class="task-checkbox"
+          />
+          <span class="task-title">{{ task.title }}</span>
+        </label>
+      </form>
+
+      <form
+        action="{{ url_for('delete_task', task_id=task.id) }}"
+        method="post"
+        class="delete-form"
+      >
+        <button type="submit" class="btn btn-danger" title="Delete task">
+          🗑️
+        </button>
+      </form>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="empty-state">No tasks yet. Add one above!</p>
+  {% endif %}
+</section>
+{% endblock %}
