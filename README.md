@@ -15,6 +15,8 @@ A simple task management application built with Flask. Tasks are persisted to a 
 ```
 toDoApp/
 ├── app.py              # Flask application entry point
+├── ps_solution.py      # solution of task 2
+├── student.sql         # solution of task 3
 ├── storage.py          # JSON persistence layer
 ├── tasks.json          # Task data storage
 ├── README.md           # This file
