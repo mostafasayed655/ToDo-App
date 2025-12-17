@@ -1,22 +1,19 @@
-# Flask To-Do App
+# Backend Assessment Solutions
 
-A simple task management application built with Flask. Tasks are persisted to a JSON file.
+This repository contains the complete submission for the backend assessment, covering three main tasks:
+1.  **Flask To-Do App:** A complete task management web application.
+2.  **Problem Solving:** A Python script to find the shortest string.
+3.  **SQL Challenge:** A query to filter students based on grades.
 
-## Features
+---
 
-- ✅ Add new tasks
-- ✅ Mark tasks as done/not done using checkboxes
-- ✅ Delete tasks
-- ✅ Data persisted to JSON file
-- ✅ Clean, responsive UI
+## 📂 Project Structure
 
-## Project Structure
-
-```
+```text
 toDoApp/
-├── app.py              # Flask application entry point
-├── ps_solution.py      # solution of task 2
-├── student.sql         # solution of task 3
+├── app.py              # Task 1: Flask application entry point
+├── ps_solution.py      # Task 2: Problem Solving solution (Shortest String)
+├── student.sql         # Task 3: SQL Query solution
 ├── storage.py          # JSON persistence layer
 ├── tasks.json          # Task data storage
 ├── README.md           # This file
@@ -27,23 +24,18 @@ toDoApp/
     ├── styles.css      # Application styles
     └── app.js          # Client-side JavaScript
 ```
+## 1️⃣ Task 1: Flask To-Do App
 
-## Setup
+### Setup
 
-### 1. Create a virtual environment
+#### 1. Create a virtual environment
 
 ```bash
 python3 -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
-### 2. Install dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-### 3. Run the application
+#### 3. Run the application
 
 ```bash
 python app.py
@@ -57,11 +49,11 @@ export FLASK_DEBUG=1
 flask run
 ```
 
-### 4. Open in browser
+#### 4. Open in browser
 
 Navigate to [http://localhost:5000](http://localhost:5000)
 
-## Task Entity
+### Task Entity
 
 Each task has the following structure:
 
@@ -83,6 +75,36 @@ Each task has the following structure:
 | POST   | `/tasks/<id>/update` | Update task status |
 | POST   | `/tasks/<id>/delete` | Delete a task      |
 
-## License
+---
+
+## 2️⃣ Task 2: Problem Solving
+
+**File:** `ps_solution.py`
+
+A Python script that contains a function to find and return the **shortest string** in a list of strings.
+
+### How to Run
+You can run the script directly in the terminal to see the test case output:
+
+```bash
+python ps_solution.py
+
+```
+
+---
+
+## 3️⃣ Task 3: SQL Challenge
+
+**File:** `student.sql`
+
+This file contains the SQL query required to retrieve all students who achieved grades between **90 and 100**.
+
+### Schema Used:
+
+* **Table:** `students`
+* **Columns:** `student_id`, `name`, `grade`
+
+
+### License
 
 MIT
